@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 
@@ -28,30 +29,30 @@ const Navbar = () => {
 
         {/* قائمة سطح المكتب */}
         <div className="hidden md:flex items-center gap-6 ">
-          <a
-            href="#home"
+          <Link
+            href="/"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
             الرئيسية
-          </a>
-          <a
-            href="#collection"
+          </Link>
+         <Link
+            href="/collection"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
             المجموعة
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            href="/about"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
             من نحن
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
             تواصل معنا
-          </a>
+          </Link>
           <button className="text-slate-600 font-semibold px-5 py-1 rounded-full border border-slate-300">
             لوحة الإدارة
           </button>

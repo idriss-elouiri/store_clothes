@@ -1,4 +1,4 @@
-import LatestCollections from "@/components/Collection";
+import LatestCollections from "@/components/LatestCollections";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import PolicySection from "@/components/Policy";
