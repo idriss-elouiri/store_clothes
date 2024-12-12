@@ -2,16 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import { useCart } from "./CartContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-
-  const handleAddToCart = () => {
-    setCartCount(cartCount + 1);
-  };
+  const { getCartCount } = useCart();
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50" dir="rtl">
@@ -28,14 +25,14 @@ const Navbar = () => {
         </div>
 
         {/* قائمة سطح المكتب */}
-        <div className="hidden md:flex items-center gap-6 ">
+        <div className="hidden md:flex items-center gap-6">
           <Link
             href="/"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
             الرئيسية
           </Link>
-         <Link
+          <Link
             href="/collection"
             className="text-slate-600 font-semibold hover:text-slate-800"
           >
@@ -60,28 +57,26 @@ const Navbar = () => {
 
         {/* الأيقونات وزر لوحة الإدارة */}
         <div className="flex items-center gap-6">
-          {/* الأيقونات */}
-          <FaSearch
-            className="text-slate-600 hover:text-slate-800 cursor-pointer"
-            size={20}
-          />
-          <FaUser
-            className="text-slate-600 hover:text-slate-800 cursor-pointer"
-            size={20}
-          />
-          <div className="relative cursor-pointer">
-            <FaShoppingCart
-              className="text-gray-600 hover:text-gray-800"
+          <Link href={"/collection"}>
+            <FaSearch
+              className="text-slate-600 hover:text-slate-800 cursor-pointer"
               size={20}
             />
-            {cartCount > 0 && (
+          </Link>
+          <Link href={"/login"}>
+            <FaUser
+              className="text-slate-600 hover:text-slate-800 cursor-pointer"
+              size={20}
+            />
+          </Link>
+          <Link href={"/cart"} className="relative cursor-pointer">
+            <FaShoppingCart size={20} />
+            {getCartCount() > 0 && (
               <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">
-                {cartCount}
+                {getCartCount()}
               </span>
             )}
-          </div>
-
-          {/* زر لوحة الإدارة */}
+          </Link>
         </div>
 
         {/* زر القائمة للهواتف */}

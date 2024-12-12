@@ -3,61 +3,64 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" py-12">
+    <footer className="py-12">
       <div className="container mx-auto px-6 md:px-12">
-        {/* About Section */}
+        {/* قسم عن الشركة */}
         <div className="mb-12 md:flex md:justify-between">
           <div className="md:w-1/3">
             <Image
               src="/images/logo.png"
-              alt="Upload Images"
+              alt="رفع الصور"
               width={100}
               height={100}
               className="cursor-pointer mb-4"
             />
             <p className="text-md text-slate-800 mb-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              لوريم إيبسوم هو مجرد نص وهمي في صناعة الطباعة والتنضيد. كان لوريم
+              إيبسوم نصاً وهمياً معتمداً في هذه الصناعة منذ القرن الخامس عشر،
+              عندما أخذ طابع غير معروف مجموعة من الحروف وخلطها لإنشاء كتاب عينات
+              للطباعة.
             </p>
           </div>
 
-          {/* Company Links */}
+          {/* روابط الشركة */}
           <div className="md:w-1/4">
-            <h3 className="text-xl text-black font-semibold mb-4">COMPANY</h3>
+            <h3 className="text-xl text-black font-semibold mb-4">الشركة</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-slate-800 hover:text-black">
-                  Home
+                  الصفحة الرئيسية
                 </a>
               </li>
               <li>
                 <a href="#" className="text-slate-800 hover:text-black">
-                  About us
+                  عنا
                 </a>
               </li>
               <li>
                 <a href="#" className="text-slate-800 hover:text-black">
-                  Delivery
+                  التوصيل
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-800 hover:text-black" >
-                  Privacy policy
+                <a href="#" className="text-slate-800 hover:text-black">
+                  سياسة الخصوصية
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Get in Touch */}
+          {/* تواصل معنا */}
           <div className="md:w-1/4">
             <h3 className="text-xl text-black font-semibold mb-4">
-              GET IN TOUCH
+              تواصل معنا
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="tel:+10000000000" className="text-slate-800 hover:text-black">
+                <a
+                  href="tel:+10000000000"
+                  className="text-slate-800 hover:text-black"
+                >
                   +1-000-000-0000
                 </a>
               </li>
@@ -75,17 +78,17 @@ const Footer = () => {
                   target="_blank"
                   className="text-slate-800 hover:text-black"
                 >
-                  Instagram
+                  إنستاجرام
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Copyright Section */}
+        {/* قسم حقوق الطبع */}
         <div className="text-center mt-8 border-t border-gray-700 pt-4">
           <p className="text-balck text-md">
-            Copyright 2024@ idriss.dev - All Rights Reserved.
+            حقوق الطبع والنشر 2024@ idriss.dev - جميع الحقوق محفوظة.
           </p>
         </div>
       </div>
