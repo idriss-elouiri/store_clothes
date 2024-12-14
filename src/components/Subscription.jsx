@@ -5,13 +5,9 @@ export default function SubscriptionForm() {
     <div className="flex flex-col justify-center items-center py-10">
       {/* Header Section */}
       <div className="text-center mb-10">
-        <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+        <h3 className="text-3xl font-semibold text-gray-900 ">
           اشترك الآن واحصل على خصم 20%
         </h3>
-        <p className="text-gray-600 text-lg">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
       </div>
 
       {/* Form Section */}

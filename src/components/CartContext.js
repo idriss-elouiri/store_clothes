@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(savedCart);
+    setCartItems(savedCart); // Sync the state with the localStorage
   }, []);
 
   const getCartCount = () => {
@@ -19,13 +19,31 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (id) => {
-    const updatedCart = cartItems.filter((item) => item._id !== id); // Use _id here
+    const updatedCart = cartItems.filter((item) => item._id !== id); // Removes only the selected product
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Persist changes in localStorage
+  };
+
+  const updateCartItemQuantity = (id, newQuantity) => {
+    setCartItems((prevCartItems) => {
+      const updatedCart = prevCartItems.map((item) =>
+        item._id === id ? { ...item, quantity: newQuantity } : item
+      );
+      localStorage.setItem("cart", JSON.stringify(updatedCart)); // حفظ التعديلات في localStorage
+      return updatedCart; // إرجاع القائمة المعدلة
+    });
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, removeFromCart, getCartCount }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        setCartItems,
+        removeFromCart,
+        getCartCount,
+        updateCartItemQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

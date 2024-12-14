@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const LatestCollections = () => {
   const [collections, setCollections] = useState([]);
@@ -60,8 +61,9 @@ const LatestCollections = () => {
         {/* Collection Items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {collections.map((item) => (
-            <div
+            <Link 
               key={item._id}
+              href={`/productDetails/${item._id}`}
               className="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition"
             >
               <div className="overflow-hidden rounded-lg mb-4">
@@ -80,7 +82,7 @@ const LatestCollections = () => {
               <p className="text-xl text-slate-800 font-bold">
                 {item.price}د.م
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

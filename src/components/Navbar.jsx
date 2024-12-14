@@ -58,21 +58,33 @@ const Navbar = () => {
         {/* الأيقونات وزر لوحة الإدارة */}
         <div className="flex items-center gap-6">
           <Link href={"/collection"}>
-            <FaSearch
-              className="text-slate-600 hover:text-slate-800 cursor-pointer"
-              size={20}
+            <Image
+              src="/images/search_icon.png"
+              alt="Upload Images"
+              width={20}
+              height={20}
+              className="cursor-pointer"
             />
           </Link>
           <Link href={"/login"}>
-            <FaUser
-              className="text-slate-600 hover:text-slate-800 cursor-pointer"
-              size={20}
+            <Image
+              src="/images/profile_icon.png"
+              alt="Upload Images"
+              width={20}
+              height={20}
+              className="cursor-pointer"
             />
           </Link>
           <Link href={"/cart"} className="relative cursor-pointer">
-            <FaShoppingCart size={20} />
+            <Image
+              src="/images/cart_icon.png"
+              alt="Upload Images"
+              width={20}
+              height={20}
+              className="cursor-pointer"
+            />{" "}
             {getCartCount() > 0 && (
-              <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">
+              <span className="absolute top-[-3px] right-[-5px] bg-red-600 text-white text-xs rounded-full px-1">
                 {getCartCount()}
               </span>
             )}

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const BestSellers = () => {
   const [bestsellers, setBestsellers] = useState([]);
@@ -60,7 +61,8 @@ const BestSellers = () => {
         {/* Collection Items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {bestsellers.map((item) => (
-            <div
+            <Link
+              href={`/productDetails/${item._id}`}
               key={item._id}
               className="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition"
             >
@@ -80,7 +82,7 @@ const BestSellers = () => {
               <p className="text-xl text-slate-800 font-bold">
                 {item.price}د.م
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
