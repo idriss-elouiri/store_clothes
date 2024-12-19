@@ -45,7 +45,7 @@ const HeroSection = () => {
     <section className="py-10" dir="rtl">
       {" "}
       {/* Add dir="rtl" for right-to-left layout */}
-      <div className="container  mx-auto bg-slate-100 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between">
+      <div className="container  mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between">
         {/* Text Section */}
         <div className="mb-6 md:mb-0 md:w-1/2 text-center md:text-right">
           <div className="flex items-center justify-start">
