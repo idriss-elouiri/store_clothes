@@ -50,9 +50,11 @@ const Navbar = () => {
           >
             تواصل معنا
           </Link>
-          <button className="text-slate-600 font-semibold px-5 py-1 rounded-full border border-slate-300">
-            لوحة الإدارة
-          </button>
+          <Link href="https://admin-store-steel.vercel.app/">
+           <button className="text-slate-600 font-semibold px-5 py-1 rounded-full border border-slate-300">
+             لوحة الإدارة
+           </button>
+          </Link>
         </div>
 
         {/* الأيقونات وزر لوحة الإدارة */}
